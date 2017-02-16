@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/FaanJoeng/faan/issues"
   },
-  "homepage": "https://github.com/FaanJoeng/faan#readme"
+  "homepage": "https://github.com/FaanJoeng/faan#readme",
+  "dependencies": {
+    "express": "^4.14.1"
+  }
 }
