@@ -17,6 +17,11 @@
   },
   "homepage": "https://github.com/FaanJoeng/faan#readme",
   "dependencies": {
-    "express": "^4.14.1"
+    "body-parser": "^1.16.1",
+    "ejs": "^2.5.5",
+    "express": "^4.14.1",
+    "morgan": "^1.8.1",
+    "mysql": "^2.13.0",
+    "serve-favicon": "^2.3.2"
   }
 }
