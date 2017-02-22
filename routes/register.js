@@ -1,15 +1,14 @@
 var express = require('express');
 var router = express.Router();
 var userDao = require('../dao/userDao');
-var hash = require('../utils/pass');
+var hash = require('../utils/pass').hash;
 
-router.post('/', function (req, res, next) {
-	console.log(req.body);
+router.post('/', function (req, res, next){
 	var pass = req.body.password;
-	hash(pass, function (err, salt, hash) \{
+	hash(pass, function (err, salt, hash){
 		if(err) throw err;
-        userDao.add(req, res, salt, hash);
-	})
+        userDao.add(req, res, hash, salt, next);
+	});
 	res.end();
 });
 

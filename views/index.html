@@ -13,7 +13,7 @@
         <div class="circle-icon">
         </div>
         <div class="title">Member Login</div>
-        <form>
+        <form action="/auth" method="post">
           <input type="text" name="username" placeholder="Username">
           <input type="password" name="password" placeholder="Password">
           <button type="submit">LOGIN</button>
@@ -26,12 +26,13 @@
         </div>
         <div class="title">Register</div>
         <form action="/register" method="post">
-          <input type="text" name="username" placeholder="Username">
-          <input type="password" name="password" placeholder="Password">
-          <input type="password" name="password-confirm" placeholder="Confirm Password">
+          <input type="text" id="reg-username" name="username" placeholder="Username" maxlength="10">
+          <input type="password" id="reg-pass" name="password" placeholder="Password" maxlength="6">
+          <input type="password" id="reg-pass-confirm" name="password-confirm" placeholder="Confirm Password" maxlength="6">
           <button type="submit">REGISTER</button>
         </form>
         <div class="forget"><a href="#">Member Login</a></div>
+        <div id="reg-tips"></div>
       </div>
     </div>
 </body>
