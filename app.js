@@ -17,8 +17,11 @@ app.use(logger('dev'));
 //router setup 
 var routes = require('./routes/index');
 var register = require('./routes/register');
+var auth = require('./routes/auth');
+
 app.use('/', routes);
 app.use('/register', register);
+app.use('/auth', auth);
 
 //view engine setup 
 app.set('views', path.join(__dirname, 'views'));
@@ -46,6 +49,8 @@ app.use(function(req, res, next) {
 
 app.use(function(err, req, res, next) {
   res.status(err.status || 500);
+
+  console.log(err);
   res.render('error', {
     title: 'Wrong!',
     error: err
