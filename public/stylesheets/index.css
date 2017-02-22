@@ -103,3 +103,9 @@ html, body {
 	color: #f5683d;
 }
 
+#reg-tips {
+	margin-top: 20px;
+	padding-left: 30px;
+    
+    color: #f00;
+}
