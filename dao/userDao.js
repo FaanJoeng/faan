@@ -14,7 +14,7 @@ module.exports = {
         			console.log(err);
         		}
         		if(result){
-        			res.status(200).end('success!');
+        			
         		}
         	});
         	connection.release();
@@ -25,12 +25,33 @@ module.exports = {
         var username = req.body.username;
         pool.getConnection(function(err, connection){
             connection.query($sql.query, [username], function(err, result){
-                if(err)
+                if(err){
                     console.log(err);
+                }
                 if(result){
                     fn(req, res, result);
                 }
             });
+        });
+    },
+
+    isExisted: function(req, res){
+        var username = req.query.username;
+
+        pool.getConnection(function(err, connection){
+            connection.query($sql.isExisted, [username], function(err, result){
+                if(err){
+                    console.log(err);
+                }
+                if(result){
+                    if(typeof result[0] === 'undefined'){
+                        res.json({"msg" : "Username available"});
+                    }else if(result[0].username == username){
+                        res.json({"msg" : "Username unavailable"});
+                    }
+                }
+            });
+            connection.release();
         });
     }
 }
