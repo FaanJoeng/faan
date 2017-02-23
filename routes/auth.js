@@ -28,7 +28,7 @@ router.post('/', function(req, res, next){
                 }else{
                     console.log('auth fail');
                 	req.session.error = 'Auth Fail.';
-                    res.render('error', {title : 'Auth failed.', msg : 'The username or password is wrong.', link : '<a href='/'>Login</a>'});
+                    res.render('error', {title : 'Auth failed.', msg : 'The username or password is wrong.', link : "<a href='/'>Login</a>"});
                 }
         	});
         }
