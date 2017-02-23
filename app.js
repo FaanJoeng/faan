@@ -55,7 +55,6 @@ app.use(function(err, req, res, next) {
   res.render('error', {
     title: 'Wrong!',
     error: err,
-    msg: 'Crash'
   });
 });
 
