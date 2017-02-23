@@ -18,6 +18,7 @@
   "homepage": "https://github.com/FaanJoeng/faan#readme",
   "dependencies": {
     "body-parser": "^1.16.1",
+    "cookie-parser": "^1.4.3",
     "ejs": "^2.5.5",
     "express": "^4.14.1",
     "express-session": "^1.15.1",

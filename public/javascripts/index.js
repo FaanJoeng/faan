@@ -50,7 +50,7 @@ window.onload = function(){
 	passConfirm.onblur = function(){
 		if(pass.value !== this.value){
 			tips.innerHTML = "Please confirm your password again.";
-		}else{
+		}else if(passConfirm.value !== ' '){
 			tips.innerHTML = " ";
             submit.removeAttribute('disabled');
 		}
