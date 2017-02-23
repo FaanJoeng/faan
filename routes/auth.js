@@ -15,8 +15,7 @@ router.use(session({
 router.post('/', function(req, res, next){
 	userDao.query(req, res, function(req, res, result){
         if(typeof result[0] === 'undefined'){
-            res.render('error', {title : 'Auth failed.', msg : 'The username or password is wrong.'});
-        	
+            res.render('error', {title : 'Auth failed.', msg : 'The username or password is wrong.'});	
         }else{
         	hash(req.body.password, result[0].salt, function(err, hashedPassword){
                 if(result[0].hash === hashedPassword){
@@ -29,7 +28,7 @@ router.post('/', function(req, res, next){
                 }else{
                     console.log('auth fail');
                 	req.session.error = 'Auth Fail.';
-                	res.redirect('/');
+                    res.render('error', {title : 'Auth failed.', msg : 'The username or password is wrong.', link : '<a href='/'>Login</a>'});
                 }
         	});
         }
