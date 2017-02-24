@@ -5,7 +5,8 @@ window.onload = function(){
 	var pass= document.getElementById('reg-pass');
 	var passConfirm = document.getElementById('reg-pass-confirm');
 	var tips = document.getElementById('reg-tips');
-    var switchBtn = document.getElementById('switchToLogin');
+    var switchToLogin = document.getElementById('switchToLogin');
+    var switchToRegister = document.getElementById('switchToRegister');
     var submitBtn = document.getElementById('submit');
 
 	username.oninput = function(){
@@ -52,13 +53,18 @@ window.onload = function(){
 			tips.innerHTML = "Please confirm your password again.";
 		}else if(passConfirm.value !== ' '){
 			tips.innerHTML = " ";
-            submit.removeAttribute('disabled');
+            submitBtn.removeAttribute('disabled');
 		}
 	}
 
-	switchBtn.onclick = function(){
+	switchToLogin.onclick = function(){
 		regBox.style.display = "none";
         loginBox.style.display = "block";
+	}
+
+	switchToRegister.onclick = function(){
+		regBox.style.display = "block";
+		loginBox.style.display = "none";
 	}
 
 
