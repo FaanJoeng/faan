@@ -18,6 +18,7 @@ router.post('/', function(req, res, next){
             res.render('error', {title : 'Auth failed.', msg : 'The username or password is wrong.', link : "<a href='/'>Login</a>"});	
         }else{
         	hash(req.body.password, result[0].salt, function(err, hashedPassword){
+                //test whether the password submit is the same with the former
                 if(result[0].hash === hashedPassword){
                 	req.session.regenerate(function(){
                         console.log('auth ok');
@@ -35,19 +36,20 @@ router.post('/', function(req, res, next){
 	});
 });
 
+//go to restricted page
 router.get('/restricted', restricted, function(req, res, next){
     console.log('ress');
     res.render('restrict', {title: 'Restricted'});
 });
 
-
+//destory a session
 router.get('/logout', function(req, res){
     req.session.destroy(function(){
         res.redirect('/');
     });
 });
 
-
+//test whether the browser is legal
 function restricted(req, res, next){
     if(req.session.user){
         next();

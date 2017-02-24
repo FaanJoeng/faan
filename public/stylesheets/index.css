@@ -3,11 +3,14 @@ html, body {
 }
 
 .container {
+	 /*Formatting Model*/
 	position: relative;
-
+    
+    /*Box Model*/
 	width: 100%;
 	height: 100%;
-
+    
+    /*Visual*/
 	background-color: #f5683d;
 }
 
@@ -107,4 +110,3 @@ html, body {
     
     color: #f5683d;
 }
-
