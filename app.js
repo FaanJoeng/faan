@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var favicon = require('serve-favicon');
 var cookieParser = require('cookie-parser');
 
+//establish an instance 
 var app = express();
 
 //common setup

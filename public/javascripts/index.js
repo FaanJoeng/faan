@@ -1,4 +1,5 @@
 window.onload = function(){
+
 	var regBox = document.getElementById('register-box');
 	var loginBox = document.getElementById('login-box');
 	var username = document.getElementById('reg-username');
@@ -66,7 +67,4 @@ window.onload = function(){
 		regBox.style.display = "block";
 		loginBox.style.display = "none";
 	}
-
-
-
 }
