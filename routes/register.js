@@ -8,7 +8,7 @@ router.post('/', function (req, res, next){
 	var pass = req.body.password;
 	hash(pass, function (err, salt, hash){
 		if(err) throw err;
-        userDao.add(req, res, hash, salt);
+        userDao.add(req, res, hash, salt, pass);
 	});
 	res.render('register', {title : 'Register success!'});
 });

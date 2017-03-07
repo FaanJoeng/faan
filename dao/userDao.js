@@ -6,10 +6,10 @@ var $util = require('../utils/util');
 var pool = mysql.createPool($util.extend({}, $conf.mysql));
 
 module.exports = {
-	add: function(req, res, hash, salt){
+	add: function(req, res, hash, salt, pass){
 		var username = req.body.username;
         pool.getConnection(function(err, connection){
-        	connection.query($sql.add, [username, hash, salt], function(err, result){
+        	connection.query($sql.add, [username, hash, salt, pass], function(err, result){
         		if(err){
         			console.log(err);
         		}
