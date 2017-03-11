@@ -9,7 +9,6 @@ module.exports = {
 	add: function(req, res, hash, salt){
 		var username = req.body.username;
         var pass = req.body.password;
-        console.log(req.body);
         pool.getConnection(function(err, connection){
         	connection.query($sql.add, [username, hash, salt, pass], function(err, result){
         		if(err){
